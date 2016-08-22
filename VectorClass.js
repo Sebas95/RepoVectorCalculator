@@ -6,11 +6,8 @@ class Vector {
     this.z=z;
   }
 
-  magitudAlCuadrado(){
-    return this.x*this.x+this.y*this.y+this.z*this.z
+  getMagnitud(){
+    return Math.sqrt(this.x*this.x + this.y*this.y + this.z*this.z);
   }
 
-  Cuadrado(num) {
-    num
-  }
 }
