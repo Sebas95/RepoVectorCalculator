@@ -14,7 +14,7 @@ class VectorOps {
     }
 
     puntoVectores(VectorA, VectorB){
-      var Producto = new Vector (VectorA.x*VectorB.x+VectorA.y*VectorB.y+VectorA.z*VectorB.z)
+      var Producto = (VectorA.x*VectorB.x+VectorA.y*VectorB.y+VectorA.z*VectorB.z)
       return Producto
     }
 
