@@ -24,7 +24,4 @@ class VectorOps {
                                 VectorA.x*VectorB.y-VectorA.y*VectorB.x)
       return VectorC
     }
-
-
-
 }
