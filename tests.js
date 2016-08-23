@@ -19,7 +19,7 @@ Tests the function getMagnitud() of the class VectorOps
 */
 QUnit.test( "Magnitud Test", function( assert ) {
 	var v = new Vector(1,2,2);
-  	assert.ok( v.getMagnitud() == 3, "Magnitud =  3" );
+  	assert.ok( v.getMagnitud() == 3, "Magnitud de (1,2,2) =  3" );
 });
 
 
@@ -39,7 +39,8 @@ QUnit.test( "SumaVectores Test", function( assert ) {
 });
 
 /*
-Tests the result of the function restarVectores(), by testing each property of the result vector object
+Tests the result of the function restarVectores(), by testing each property 
+of the result vector object
 equal()
 expect()
 */
@@ -62,7 +63,7 @@ it uses the function assert.equal().Doing a non-estrict comparison between the r
 and "48". Note that equal doesn´t compare type, so comparison between strings and numbers
  are valid.
 */
-QUnit.test( "ProductoVectores Test", function( assert ) {
+QUnit.test( "ProductoPuntoVectores Test", function( assert ) {
 	var v1 = new Vector(1,1,1);
 	var v2 = new Vector(9,5,34);
 	var op = new VectorOps();
@@ -84,4 +85,17 @@ QUnit.test( "CruzVectores Test", function( assert ) {
 
 	assert.expect(1); //expects one assertion
 	assert.propEqual(op.cruzVectores(v1,v2),result, "(1,1,1)  +  (9,5,34)  =  (29,25,-4)  ");
+});
+
+/*
+Checks if the arguments of  multiplicarConEscalar() are of the correct type
+*/
+QUnit.test("Multiplicación de vector escalar" ,function(assert){
+	var op = new VectorOps();
+
+	assert.equal(op.multiplicarConEscalar("this is a string",54) ,			"error", "Error correctly detected")
+	assert.equal(op.multiplicarConEscalar([],{}), 							"error", "Error correctly detected")
+	assert.equal(op.multiplicarConEscalar(3,{})	,							"error", "Error correctly detected")
+	assert.equal(op.multiplicarConEscalar(function(){},"this is a string"),	"error", "Error correctly detected")
+
 });

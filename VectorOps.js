@@ -50,4 +50,11 @@ class VectorOps {
                                 VectorA.x*VectorB.y-VectorA.y*VectorB.x)
       return VectorC
     }
+
+    multiplicarConEscalar(escalar,vector){
+      if(typeof escalar != 'number') return "error";
+      if(typeof vector != 'Vector') return "error";
+      var v = new Vector(vector.x*escalar, vector.y*escalar, vector.z*escalar); 
+      return v;
+    }
 }
